@@ -92,10 +92,14 @@ html, body, div, a, p, span, ul, li, input {
   box-sizing: border-box;
 }
 
+body{
+  padding-bottom: pr(126px);
+}
+
 .wrap {
   width: pr(750px);
   margin: 0 auto;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .header {
@@ -106,6 +110,8 @@ html, body, div, a, p, span, ul, li, input {
   rgba(6, 0, 1, 0.16);
   .logo {
     float: left;
+    width: pr(138px);
+    height: pr(39px);
     margin-top: pr(41px);
   }
   .second {
@@ -117,7 +123,7 @@ html, body, div, a, p, span, ul, li, input {
     color: #777777;
     text-align: center;
     font-size: pr(18px);
-    line-height: pr(22px);
+    line-height: pr(26px);
   }
   .ky{
     float: left;
@@ -148,19 +154,21 @@ html, body, div, a, p, span, ul, li, input {
         float: left;
         width: pr(50px);
         height: pr(50px);
-        background: url("../images/tel.png") no-repeat;
-        margin-right: 8px;
+        background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/tel.png") no-repeat;
+        background-size: 100% 100%;
+        margin-right: pr(6px);
       }
       .text {
         float: right;
-        text-align: left;
         .hotline {
-          font-size: 14px;
+          font-size: pr(20px);
+          line-height: pr(20px);
           color: #777777;
         }
         .number {
-          font-size: 20px;
-          color: #f77637;
+          font-size: pr(26px);
+          line-height: pr(34px);
+          color: #07c295;
           font-weight: bold;
         }
       }
@@ -219,6 +227,11 @@ html, body, div, a, p, span, ul, li, input {
   height: pr(400px);
   background-position: center;
   background-size: 100% 100%;
+  .banner-link{
+    @extend %in-b;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .title-module{
@@ -227,13 +240,14 @@ html, body, div, a, p, span, ul, li, input {
   h2{
     font-size: pr(40px);
     line-height: pr(40px);
-    background: url("../images/title_1.png") no-repeat center top;
+    background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/title_1.png") no-repeat center top;
     padding-top: pr(21px);
     background-size: auto 100%;
+    margin-bottom: pr(16px);
   }
   .subtitle{
     font-size: pr(22px);
-    line-height: pr(16px);
+    line-height: pr(22px);
     color: #888888;
   }
 }
@@ -309,7 +323,7 @@ html, body, div, a, p, span, ul, li, input {
                 z-index: 20;
                 width: 100%;
                 height: 100%;
-                background: url("../images/pause.png") no-repeat center rgba(0, 0, 0, 0.6);
+                background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/pause.png") no-repeat center rgba(0, 0, 0, 0.6);
               }
             }
           }
@@ -334,19 +348,18 @@ html, body, div, a, p, span, ul, li, input {
 
 /* 全程班 */
 .whole{
-  padding: pr(60px) $padding-size 0;
-  margin-bottom: 50px;
+  padding: pr(60px) $padding-size;
   .title-module{
     margin-bottom: pr(36px);
     h2{
-      background: url("../images/title_2.png") no-repeat center top;
+      background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/title_2.png") no-repeat center top;
       background-size: auto 100%;
     }
   }
   .whole-yh{
     text-align: center;
     margin-bottom: pr(30px);
-    height: pr(410px);
+    //height: pr(410px);
     background-color: $txt-color;
     border-radius: pr(11px);
     padding: pr(74px) pr(25px) pr(36px);
@@ -359,7 +372,6 @@ html, body, div, a, p, span, ul, li, input {
       border-radius: pr(10px);
       position: relative;
       width: pr(320px);
-      height: pr(300px);
       padding: pr(67px) 0 pr(20px);
       text-align: center;
       .item-icon{
@@ -378,10 +390,11 @@ html, body, div, a, p, span, ul, li, input {
       .item-row{
         @extend %one;
         font-size: pr(24px);
-        line-height: 24px;
+        line-height: pr(42px);
         .row-title{
           display: block;
           font-size: pr(30px);
+          line-height: pr(52px);
           font-weight: bold;
         }
         .row-more{
@@ -396,24 +409,46 @@ html, body, div, a, p, span, ul, li, input {
           }
         }
       }
+      .item-btn{
+        @extend %in-b;
+        height: pr(42px);
+        line-height: pr(42px);
+        border-radius: pr(21px);
+        font-size: pr(22px);
+        color: #ffffff;
+        padding-left: pr(21px);
+        padding-right: pr(18px);
+        background-color: #f88531;
+        &:before{
+          @extend %in-b;
+          content: '';
+          width: pr(21px);
+          height: pr(23px);
+          background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/hand.png") no-repeat;
+          background-size: 100% 100%;
+          vertical-align: middle;
+        }
+      }
       &:nth-of-type(2){
         background-color: #e9f6ff;
       }
     }
   }
   .whole-content{
-    margin-bottom: 50px;
+    margin-bottom: pr(40px);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: pr(20px);
     grid-row-gap: pr(20px);
     .whole-item{
-      //width: pr(345px);
       background-color: #ffffff;
       box-shadow: 0px 2px 8px 0px
       rgba(11, 78, 62, 0.1);
       .item-bg{
         height: pr(190px);
+        img{
+          width: 100%;
+        }
       }
       .item-detail{
         padding: pr(30px) pr(20px);
@@ -422,11 +457,11 @@ html, body, div, a, p, span, ul, li, input {
           line-height: pr(26px);
           color: #333333;
           padding-left: pr(36px);
-          background: url("../images/icon_3.png") no-repeat;
+          background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/icon_3.png") no-repeat;
           background-size: auto 100%;
           font-weight: bold;
           &.sel{
-            background: url("../images/icon_4.png") no-repeat;
+            background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/icon_4.png") no-repeat;
             background-size: auto 100%;
           }
           @extend %one;
@@ -467,16 +502,17 @@ html, body, div, a, p, span, ul, li, input {
   }
   .whole-price{
     height: pr(415px);
-    background: url("../images/bg_2.png") no-repeat;
+    background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/bg_2.png") no-repeat;
     background-size: 100% 100%;
+    padding-bottom: pr(42px);
     .price-l{
       width: pr(381px);
       height: pr(160px);
       font-size: pr(26px);
       font-weight: bold;
-      line-height: pr(36px);
+      line-height: pr(42px);
       margin-left: pr(164px);
-      padding: pr(40px) pr(50px);
+      padding: pr(40px) pr(70px);
       color: $txt-color;
       .l-row{
         &:nth-of-type(1){
@@ -485,12 +521,13 @@ html, body, div, a, p, span, ul, li, input {
       }
     }
     .price-r{
-      margin-top: pr(40px);
+      margin-top: pr(30px);
       text-align: center;
       .r-sum{
         color: #ffffff;
         font-size: pr(20px);
         line-height: pr(36px);
+        margin-bottom: pr(30px);
         .sum-row{
           span{
             color: #fffd5f;
@@ -502,16 +539,21 @@ html, body, div, a, p, span, ul, li, input {
         }
       }
       .r-btn{
-        @extend %in-b;
-        width: 180px;
-        height: 52px;
-        background-color: $bg-color;
-        border-radius: 26px;
-        text-align: center;
-        font-size: 18px;
-        line-height: 50px;
-        color: #fffefe;
-        margin-top: 4px;
+        font-size: pr(30px);
+        a{
+          @extend %in-b;
+          width: pr(240px);
+          height: pr(68px);
+          line-height: pr(66px);
+          border-radius: pr(34px);
+          border: solid pr(2px) #ffffff;
+          color: #ffffff;
+          &.active{
+            border: solid pr(2px) $bg-color;
+            background-color: $bg-color;
+            margin-left: pr(20px);
+          }
+        }
       }
     }
   }
@@ -519,137 +561,150 @@ html, body, div, a, p, span, ul, li, input {
 
 /* 联考 */
 .gct{
-  padding-top: 32px;
-  padding-bottom: 61px;
-  background: url("../images/bg_3.png") no-repeat center bottom;
+  background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/bg_3.png") no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
   .title-module{
+    h2{
+      background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/title_3.png") no-repeat center top;
+      background-size: auto 100%;
+    }
     span{
       color: #333333;
     }
   }
-  .gct-content{
-    width: 700px;
-    height: 421px;
-    border-radius: 20px;
-    float: right;
-    margin-right: 49px;
-    margin-top: 79px;
-    background: url("../images/bg_3_1.png") no-repeat right bottom rgba(255, 255, 255, 0.8);
-    position: relative;
+  .gct-cont{
+    width: pr(550px);
+    height: pr(440px);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: pr(11px);
+    margin-top: pr(114px);
+    margin-left: pr(180px);
+    padding-top: pr(30px);
+    padding-left: pr(20px);
     ul{
-      padding-left: 50px;
-      padding-top: 41px;
-      box-sizing: border-box;
+      @extend %clearfix;
+      margin-right: pr(-20px);
       li{
-        @extend %in-b;
-        height: 41px;
-        line-height: 40px;
-        border-radius: 21px;
-        border: solid 1px #888888;
-        padding: 0 32px;
-        box-sizing: border-box;
-        font-size: 16px;
+        float: left;
+        padding: 0 pr(28px);
         color: #333333;
         cursor: pointer;
-        margin-right: 16px;
-        margin-bottom: 18px;
+        margin-right: pr(20px);
+        margin-bottom: pr(20px);
+        height: pr(60px);
+        line-height: pr(60px);
+        border: solid 1px #bbbbbb;
+        font-size: pr(24px);
+        &.cur{
+          border: 1px solid $txt-color;
+          background-color: $txt-color;
+          color: #ffffff;
+        }
       }
     }
-    .gct-btn{
-      @extend %in-b;
-      width: 300px;
-      height: 52px;
-      line-height: 50px;
-      background-color: #f9582d;
-      border-radius: 0px 26px 26px 0px;
-      position: absolute;
-      left: 0;
-      bottom: 60px;
-      font-size: 18px;
-      color: #ffffff;
-      text-align: center;
-    }
+  }
+  .gct-btn{
+    @extend %in-b;
+    font-size: pr(30px);
+    color: #ffffff;
+    text-align: center;
+    width: pr(520px);
+    height: pr(68px);
+    line-height: pr(66px);
+    background-image: linear-gradient(90deg,
+        #17b58f 0%,
+        #0cb3b1 100%);
+    border-radius: pr(34px);
   }
 }
 
 /* 英语 */
 .en{
-  padding-top: 60px;
+  padding: pr(60px) $padding-size 0;
+  margin-bottom: pr(36px);
   .title-module{
-    background: url("../images/title_4.png") no-repeat center top;
+    h2{
+      background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/title_4.png") no-repeat center top;
+      background-size: auto 100%;
+    }
   }
   /* 备考方案 */
   .test-plan{
-    margin-top: 52px;
-    background: url("../images/bg_4.png") no-repeat center;
-    @extend %in-b;
-    padding: 28px 28px 0;
-    box-sizing: border-box;
+    margin-top: pr(53px);
     .plan-item {
-      width: 480px;
+      width: pr(345px);
+      //height: pr(270px);
+      border-radius: 0 pr(30px) 0px pr(30px);
       background-color: $txt-color;
-      border-radius: 30px 30px 0px 30px;
       float: left;
       position: relative;
-      padding: 27px 70px 26px 62px;
+      padding: pr(30px) 0px pr(30px) pr(20px);
       box-sizing: border-box;
       .item-num{
         @extend %in-b;
-        width: 60px;
-        height: 60px;
+        width: pr(60px);
+        height: pr(60px);
         position: absolute;
       }
       .item-title{
-        font-size: 22px;
-        font-weight: bold;
-        line-height: 22px;
         color: #ffffff;
-        margin-bottom: 15px;
+        margin-bottom: pr(20px);
+        font-size: pr(26px);
+        line-height: pr(36px);
+        span{
+          color: #fff94a;
+          display: block;
+        }
       }
       &:nth-of-type(1){
-        margin-bottom: 46px;
+        margin-bottom: pr(20px);
         .item-num{
-          background: url("../images/num_1.png") no-repeat;
-          left: -16px;
-          top: -16px;
+          background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/num_1.png") no-repeat;
+          background-size: 100% 100%;
+          left: pr(-16px);
+          top: pr(-33px);
         }
       }
       &:nth-of-type(2){
-        border-radius: 30px 30px 30px 0px;
+        border-radius: pr(30px) 0px pr(30px) 0px;
         float: right;
-        margin-bottom: 46px;
+        margin-bottom: pr(20px);
         .item-num{
-          background: url("../images/num_2.png") no-repeat;
-          right: -16px;
-          top: -16px;
+          background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/num_2.png") no-repeat;
+          background-size: 100% 100%;
+          right: pr(-16px);
+          top: pr(-33px);
         }
       }
       &:nth-of-type(3){
-        border-radius: 30px 0px 30px 30px;
+        border-radius: pr(30px) 0px pr(30px) 0px;
         float: left;
-        margin-bottom: 50px;
+        margin-bottom: pr(80px);
         .item-num{
-          background: url("../images/num_3.png") no-repeat;
-          left: -16px;
-          top: -16px;
+          background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/num_3.png") no-repeat;
+          background-size: 100% 100%;
+          left: pr(-16px);
+          bottom: pr(-27px);
         }
       }
       &:nth-of-type(4){
-        border-radius: 0px 30px 30px 30px;
+        border-radius: 0 pr(30px) 0 pr(30px);
         float: right;
-        margin-bottom: 50px;
+        margin-bottom: pr(80px);
         .item-num{
-          background: url("../images/num_4.png") no-repeat;
-          right: -16px;
-          top: -16px;
+          background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/num_4.png") no-repeat;
+          background-size: 100% 100%;
+          right: pr(-16px);
+          bottom: pr(-27px);
         }
       }
       li{
-        font-size: 14px;
-        line-height: 24px;
         color: #ffffff;
-        background: url("../images/icon_5.png") no-repeat 0px 7px;
-        padding-left: 12px;
+        background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/icon_5.png") no-repeat 0px pr(6px);
+        padding-left: pr(16px);
+        font-size: pr(20px);
+        line-height: pr(32px);
       }
       .item-btn{
         @extend %in-b;
@@ -667,16 +722,14 @@ html, body, div, a, p, span, ul, li, input {
   }
   .en-text{
     clear: both;
-    width: 1140px;
-    border-radius: 11px;
+    border-radius: pr(20px);
     border: dashed 1px #bbbbbb;
-    box-sizing: border-box;
-    font-size: 16px;
-    line-height: 30px;
     color: #333333;
-    text-align: center;
-    padding: 20px 58px;
-    margin: 0 auto 30px;
+    text-align: left;
+    padding: $padding-size pr(18px);
+    margin: 0 auto pr(50px);
+    font-size: pr(24px);
+    line-height: pr(36px);
     span{
       color: $txt-color;
       cursor: pointer;
@@ -686,262 +739,306 @@ html, body, div, a, p, span, ul, li, input {
     text-align: center;
     a{
       @extend %in-b;
-      width: 360px;
-      height: 52px;
-      line-height: 50px;
-      border-radius: 26px;
-      border: solid 1px $bg-color;
-      box-sizing: border-box;
-      font-size: 18px;
-      color: #f9582d;
-      margin: 0 5px;
-      &.active{
-        background-color: $bg-color;
-        color: #ffffff;
-      }
+      font-size: pr(30px);
+      color: #ffffff;
+      margin: 0 pr(5px);
+
+      width: pr(520px);
+      height: pr(68px);
+      line-height: pr(66px);
+      background-image: linear-gradient(90deg,
+          #17b58f 0%,
+          #0cb3b1 100%);
+      border-radius: pr(34px);
     }
   }
 }
 
 /* 师资 */
 .teachers{
-  height: 710px;
-  background: url("../images/bg_5.png") no-repeat center;
-  padding-top: 134px;
-  box-sizing: border-box;
+  background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/bg_5.png") no-repeat center;
+  background-size: 100% 100%;
+  padding: pr(86px) $padding-size pr(84px);
+  position: relative;
   text-align: center;
   .title-module{
-    background: url("../images/title_5.png") no-repeat center top;
+    h2{
+      background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/title_5.png") no-repeat center top;
+      background-size: auto 100%;
+    }
     color: #ffffff;
-    margin-bottom: 50px;
+    margin-bottom: pr(50px);
     span{
       color: #ffffff;
     }
   }
   .swiper-container{
-    width: 1357px;
     .swiper-wrapper{
-      width: 1200px;
-      margin: 0 auto;
+      height: pr(540px);
+    }
+    .swiper-pagination-bullets{
+      bottom: 0;
+      .swiper-pagination-bullet{
+        width: pr(20px);
+        height: pr(20px);
+        background-color: #ffffff;
+        opacity: 1;
+      }
+      .swiper-pagination-bullet-active{
+        width: pr(50px);
+        border-radius: pr(10px);
+      }
     }
     ul{
-      @extend %clearfix;
-      margin-right: -20px;
+      display: flex;
+      justify-content: space-between;
       li{
-        width: 285px;
+        width: pr(345px);
+        height: pr(460px);
         position: relative;
-        float: left;
-        margin-right: 20px;
         .intro{
-          height: 60px;
-          padding: 0 20px;
-          box-sizing: border-box;
-          background-color: #ffffff;
+          position: absolute;
+          bottom: pr(40px);
+          left: 0;
+          right: 0;
+          margin: auto;
+          width: pr(220px);
+          height: pr(100px);
+          background-color: rgba(255, 255, 255, 0.8);
+          border-radius: pr(8px);
+          color: $txt-color;
+          text-align: center;
+          font-size: pr(20px);
+          padding-top: pr(14px);
           .name{
-            font-size: 24px;
-            line-height: 60px;
-            color: #17b58f;
+            font-size: pr(30px);
+            line-height: pr(40px);
+            display: block;
           }
           .subject{
-            font-size: 14px;
-            line-height: 14px;
-            color: #333333;
-            float: right;
-            margin-top: 28px;
-          }
-        }
-        .honor{
-          position: absolute;
-          top: 0;
-          left: 0;
-          display: none;
-          .detail{
-            height: 300px;
-            background-color: rgba(0, 0, 0, 0.5);
-            font-size: 16px;
-            line-height: 26px;
-            color: #ffffff;
-            padding: 100px 40px;
-            box-sizing: border-box;
-          }
-          .honor-btn{
-            height: 60px;
-            background-color: $bg-color;
-            text-align: center;
-            a{
-              @extend %in-b;
-              width: 120px;
-              height: 38px;
-              line-height: 36px;
-              border-radius: 19px;
-              border: solid 1px #ffffff;
-              box-sizing: border-box;
-              font-size: 14px;
-              color: #ffffff;
-              margin-top: 10px;
-            }
-          }
-        }
-        &:hover{
-          .honor{
             display: block;
           }
         }
       }
     }
-    .swiper-button-prev{
-      width: 55px;
-      height: 101px;
-      background: url("../images/able.png") no-repeat;
-      background-size: 100% 100%;
-      transform: rotate(180deg);
-      margin-top: -50px;
-      &.swiper-button-disabled{
-        background: url("../images/unable.png") no-repeat;
-        background-size: 100% 100%;
-        transform: rotate(0);
-      }
-    }
-    .swiper-button-next{
-      width: 55px;
-      height: 101px;
-      background: url("../images/able.png") no-repeat;
-      background-size: 100% 100%;
-      margin-top: -50px;
-    }
   }
   .teachers-btn{
     @extend %in-b;
-    width: 360px;
-    height: 52px;
-    background-color: #f9582d;
-    border-radius: 26px;
-    font-size: 18px;
-    line-height: 50px;
-    color: #fffefe;
-    margin-top: 50px;
+    width: pr(520px);
+    height: pr(68px);
+    line-height: pr(68px);
+    background-color: $bg-color;
+    border-radius: pr(34px);
+    font-size: pr(30px);
+    color: #ffffff;
+    position: absolute;
+    bottom: pr(-34px);
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 100;
   }
 }
 
 /* 课堂 */
 .classroom{
-  padding-top: 75px;
+  padding: pr(94px) $padding-size 0;
   text-align: center;
   .title-module{
-    background: url("../images/title_6.png") no-repeat center top;
+    h2{
+      background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/title_6.png") no-repeat center top;
+      background-size: auto 100%;
+    }
   }
   .content{
-    padding-top: 40px;
+    padding-top: pr(40px);
     ul{
       @extend %clearfix;
-      margin-left: 70px;
+      margin-right: pr(-20px);
       li{
-        width: 520px;
-        height: 280px;
+        width: pr(345px);
+        height: pr(240px);
         float: left;
-        margin-right: 20px;
-        margin-bottom: 21px;
+        margin-right: pr(20px);
+        margin-bottom: pr(20px);
+        text-align: left;
         .content-btn{
           @extend %in-b;
-          width: 200px;
-          height: 52px;
-          line-height: 52px;
+          font-size: pr(24px);
+          color: #ffffff;
+          padding-left: pr(17px);
+          margin-top: pr(158px);
+
+          width: pr(220px);
+          height: pr(52px);
+          line-height: pr(52px);
           background-color: $txt-color;
-          border-radius: 0px 26px 26px 0px;
-          font-size: 18px;
-          color: #fffefe;
-          padding-left: 30px;
-          box-sizing: border-box;
-          margin-top: 30px;
+          border-radius: 0px pr(26px) pr(26px) 0px;
         }
       }
     }
   }
   .classroom-btn{
     @extend %in-b;
-    width: 360px;
-    height: 52px;
-    background-color: #f9582d;
-    border-radius: 26px;
-    font-size: 18px;
-    line-height: 50px;
-    color: #fffefe;
+    font-size: pr(30px);
+    color: #ffffff;
     margin-top: 18px;
+
+    width: pr(520px);
+    height: pr(68px);
+    line-height: pr(68px);
+    background-image: linear-gradient(90deg,
+        #17b58f 0%,
+        #0cb3b1 100%);
+    border-radius: pr(34px);
   }
 }
 
 /* 购课 */
 .buy-class{
-  height: 296px;
-  background: url("../images/bg_6.png") no-repeat center;
-  margin-top: -18px;
-  padding-top: 84px;
-  box-sizing: border-box;
+  height: pr(440px);
+  background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/bg_6.png") no-repeat center bottom;
+  background-size: 100% auto;
+  padding: 0 $padding-size pr(60px);
+  margin-top: pr(80px);
   .content{
-    box-shadow: -3px 2px 16px 0px
+    box-shadow: 0px pr(4px) pr(16px) 0px
     rgba(13, 69, 66, 0.16);
-    border-radius: 11px;
-    background: url("../images/icon_6.png") no-repeat 50px center #ffffff;
-    padding: 20px 0 20px 360px;
-    box-sizing: border-box;
+    border-radius: pr(11px);
+    background-color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    padding-top: pr(50px);
+    padding-bottom: pr(60px);
+    .cont-bg{
+      @extend %in-b;
+      width: pr(254px);
+      height: pr(69px);
+      margin-bottom: pr(50px);
+    }
     ul{
-      @extend %clearfix;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       li{
-        float: left;
-        width: 280px;
-        height: 110px;
+        width: 33.33%;
+        height: pr(150px);
         border-right: 1px solid #dddddd;
-        text-align: center;
-        padding: 0 67px;
-        box-sizing: border-box;
         img{
-          @extend %in-b;
+          width: pr(60px);
         }
         .text{
-          font-size: 16px;
-          line-height: 24px;
           color: #333333;
-          margin-top: 12px;
+          margin-top: pr(12px);
+          font-size: pr(20px);
+          line-height: pr(30px);
         }
       }
     }
   }
 }
 
-#footer-div {
-  height: 100px;
-  width: 100%;
-  padding: 30px;
-  box-sizing: border-box;
-  background: #333333;
+.footer{
+  height: pr(100px);
+  background-color: #333333;
+
+  color: rgba(250, 250, 250, 0.4);
   text-align: center;
-  font-size: 14px;
+  font-size: pr(20px);
+  line-height: pr(20px);
+  padding-top: pr(20px);
   p{
-    color: rgba(250, 250, 250, 0.4);
-    a{
-      color: rgba(250, 250, 250, 0.4);
-      &:hover{
-        color: $txt-color;
-      }
+    margin-bottom: pr(10px);
+  }
+}
+
+.footer-bar{
+  width: pr(750px);
+  height: pr(126px);
+  background: url('https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/footer-bar.png') no-repeat #fff;
+  background-size: 100% 100%;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 100;
+  a{
+    width: 50%;
+    height: 100%;
+    cursor: pointer;
+  }
+}
+
+/* 遮罩层 */
+.mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 110;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+}
+
+/* 预约试听弹窗 */
+.appoint-popup{
+  width: pr(560px);
+  height: pr(820px);
+  background: url("https://img.thea.cn/jingjia/public/201909/hbj/kyjj-wap/images/appoint-popup.png") no-repeat;
+  background-size: 100% 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 120;
+  text-align: center;
+  padding-top: pr(88px);
+  display: none;
+  .close{
+    display: block;
+    width: pr(80px);
+    height: pr(80px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: pointer;
+  }
+  .title{
+    font-size: pr(24px);
+    line-height: pr(68px);
+    color: #ffffff;
+  }
+  .sign-in{
+    padding: pr(50px) pr(40px) 0;
+    input{
+      width: 100%;
+      height: pr(70px);
+      line-height: pr(70px);
+      margin-bottom: pr(24px);
+      background-color: #f8f8f8;
+      border-radius: pr(6px);
+      border: solid 1px #cccccc;
+      font-size: pr(28px);
+    }
+    input[type="submit"]{
+      background-color: #f0552f;
+      color: #ffffff;
+      font-size: pr(32px);
     }
   }
-  .links {
-    color: #ffffff;
-    line-height: 24px;
-    a {
-      @extend %in-b;
-      line-height: 14px;
-      margin-left: 9px;
-      padding-right: 12px;
-      color: #ffffff;
-      border-right: 1px solid #5a5a5a;
-      margin-right: 0;
-      &:last-child {
-        border-right: 0;
-      }
-      &:hover{
-        color: $txt-color;
-      }
+  .hint{
+    font-size: pr(22px);
+    line-height: pr(30px);
+    color: #999999;
+    padding: 0 pr(70px);
+    strong{
+      color: #ec5234;
     }
   }
 }
